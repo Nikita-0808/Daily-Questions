@@ -32,3 +32,5 @@ class Solution {
         return root;
     }
 }
+
+Note :- Time Complexity = O(n) and Space Complexity = O(h) where h is height of the tree
