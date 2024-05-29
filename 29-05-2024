@@ -1,0 +1,26 @@
+Leetcode question no. - 1404 - Number of Steps to Reduce a Number in Binary Representation to One
+https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/?envType=daily-question&envId=2024-05-29
+
+import java.math.BigInteger;
+
+class Solution {
+    public int numSteps(String s) {
+        BigInteger res = new BigInteger(s, 2);
+        int count = 0;
+        while (!res.equals(BigInteger.ONE)) {
+            count++;
+            if (res.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
+                res = res.divide(BigInteger.TWO);
+            } else {
+                res = res.add(BigInteger.ONE);
+            }
+        }
+        return count;
+    }
+}
+
+//BigInteger.ZERO=0
+//BigInteger.ONE =1
+//BigInteger.TWO =2
+
+Note :- Time complexity = O(n) and Space complexity = O(1)
